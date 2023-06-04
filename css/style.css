@@ -1,0 +1,223 @@
+:root {
+   --violet: hsl(257, 40%, 49%);
+   --soft-magenta: hsl(300, 69%, 71%);
+   --white: #fff;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+   margin: 0;
+   padding: 0;
+   color: var(--very-dark-desaturated-blue);
+   box-sizing: border-box;
+}
+
+body {
+   min-height: 100vh;
+   background-color: var(--violet);
+   background-image: url('../images/bg-mobile.svg');
+   background-size: contain;
+   background-position: left 0vw top 0vh;
+   background-repeat: no-repeat, no-repeat;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   text-rendering: optimizeSpeed;
+   font-family: 'Open Sans', sans-serif;
+   color: var(--white);
+}
+
+/* 
+   HEADER SECTION
+*/
+.logo__container {
+   max-height: 100px;
+   width: 100%;
+   padding: 2em 1.5em;
+}
+.logo {
+   width: 130px;
+}
+
+/* 
+   MAIN CONTAINER
+*/
+.main__container {
+   flex-grow: 1;
+   display: grid;
+   grid-template-rows: 240px 1fr 100px;
+   max-height: calc(100vh - 100px);
+}
+   /*
+      PICTURE CONTAINER
+   */
+   .mockup__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+   }
+   .mockup {
+      height: 100%;
+      padding: 1.5em;
+   }
+   /*
+      CONTENT SECTION
+   */
+   .content__section {
+      display: flex;
+      flex-direction: column;
+      padding: 0 1.5em;
+      justify-content: center;
+   }
+   .content__title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.4em;
+      padding: .55em 0;
+   }
+   .content__description {
+      font-weight: 300;
+      line-height: 1.4em;
+      text-align: center;
+      font-size: 1.0em;
+   }
+   .button__register {
+      margin: 2em auto;
+      padding: .9em 6em;
+      background-color: var(--white);
+      color: var(--violet);
+      border-radius: 2em;
+      font-size: .8em;
+      border: 1px solid var(--white);
+      box-shadow: 1px 3px 10px #2b2b2b;
+      transition-duration: .4s;
+      cursor: pointer;
+   }
+   .button__register:hover {
+      color: var(--white);
+      background-color: var(--violet);
+   }
+/* 
+   FOOTER SECTION
+*/
+   .socials__container {
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      margin-bottom: .6em;
+      max-height: fit-content;
+      align-items: flex-start;
+      padding: 0 1.5em;
+   }
+   .facebook__container {
+      border: 1px solid var(--white);
+      padding: .4em .7em .4em .7em;
+      border-radius: 50%;
+      cursor: pointer;
+   }
+
+   .twitter__container {
+      border: 1px solid var(--white);
+      padding: .4em .5em;
+      border-radius: 50%;
+      cursor: pointer;
+   }
+
+   .instagram__container {
+      border: 1px solid var(--white);
+      padding: .4em .6em;
+      border-radius: 50%;
+      cursor: pointer;
+   }
+
+   .hovering:hover{
+      background-color: var(--white);
+      color: var(--violet);
+   }
+   .author__section{
+      position: fixed;
+      bottom: 0;
+      padding-bottom: 15px;
+      z-index: 1;
+      width: 100%;
+      text-align: center;
+   }
+   .author__section > * {
+      color: var(--white);
+      font-weight: 500;
+   }
+   .author__section > .author__spacer {
+      margin: 0 4px 0 4px;
+   }
+   .author__section, a {
+      text-decoration: none;
+      transition: .3s ease-out;
+   }
+   .author__section > .author__anchor:hover {
+      color: var(--soft-magenta);
+   }
+/*
+   DESKTOP MEDIA QUERY
+*/
+
+@media (min-width: 35em){
+   body {   
+      background-size: cover;
+      background-image: url('../images/bg-desktop.svg');
+      background-position: right 0vw bottom 0vh, left 0vw top 0vh;
+   }
+
+   .logo__container {
+      max-height: 200px;
+      padding: 2em 0 0 6em
+   }
+
+   .logo {
+      width: 12em;
+   }
+
+   .main__container {
+      grid-template-rows: 1fr;
+      grid-template-columns: 1.5fr 1fr;
+   }
+
+   .mockup{
+      width: 100%;
+      height: auto;
+      padding: 0 0 0 6em;
+   }
+
+   .content__section {
+      padding: 0 5em;
+   }
+
+   .socials__container {
+      grid-column-start: 1;
+      grid-column-end: -1;
+      justify-content: flex-end;
+      padding: 0 6em;
+      gap: 1.5em;
+   }
+
+   .button__register {
+      margin: 2em 0;
+      width: 16em
+   }
+
+   .content__title {
+      font-size: 2.3em;
+      font-weight: 600;
+   }
+
+   .content__title, .content__description {
+      text-align: left;
+   }
+
+
+
+}
